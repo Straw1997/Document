@@ -1,0 +1,301 @@
+{
+  "source_database": "C:\\Users\\YC\\Documents\\Codex\\2026-07-25\\ue\\work\\uex-analysis\\visual\\inventory.db",
+  "inventory_id": 2,
+  "inventory_profile": "silver-palace-visual",
+  "inventory_generated_at": "2026-07-25T11:58:18.3431629+00:00",
+  "inventory_asset_count": 102836,
+  "inventory_relation_count": 1364646,
+  "inventory_error_count": 0,
+  "category_counts": {
+    "Hero": {
+      "logical_character_count": 15,
+      "assembly_count": 31
+    },
+    "Boss": {
+      "logical_character_count": 15,
+      "assembly_count": 16
+    },
+    "Mob": {
+      "logical_character_count": 30,
+      "assembly_count": 37
+    },
+    "NPC": {
+      "logical_character_count": 273,
+      "assembly_count": 273
+    }
+  },
+  "assembly_count": 357,
+  "logical_character_count": 333,
+  "module_library_group_count": 47,
+  "module_library_mesh_count": 994,
+  "rules": {
+    "hero": "character/appearance/(Role|Weapon|Pet)/Meshes/(Combat|Show); Combat and Show are separate assemblies.",
+    "boss": "character identity is the first segment; Role and Weapon merge; InCar is a separate state.",
+    "mob": "visual root ends before Role/Weapon/Meshes; SilverFish elemental roots share one logical id but remain separate visual assemblies.",
+    "npc": "Class_A and Class_S roots are complete characters; Class_B/C/D/BC are module libraries and are not summed into fabricated characters.",
+    "animation": "Distinct AnimSequence assets join only through exact skeletonPath.",
+    "animation_histogram": "Uses serialized animation_json.frameCount directly. Bins are 0–30, then 30-frame closed ranges through 600, plus >600; duration totals remain available per bin and assembly.",
+    "texture": "Mesh model_material targets join to material package_import targets that exactly match Texture assets.",
+    "lod": "Per-LOD values come from mesh_json.lods; effective values use the last available LOD for meshes with fewer LODs and always include coverage fields.",
+    "bones": "reference_bones_unique uses each included mesh's referenceBoneCount, deduplicated by skeletonPath; skeleton_asset_bones_unique reports full Skeleton asset rigs separately. active_bones_proxy is max(activeBoneCount) per unique skeleton and is not an exact active-bone-name union."
+  },
+  "quality_issue_count": 2,
+  "histogram_definition": {
+    "metric": "animation_json.frameCount",
+    "bin_size_frames": 30,
+    "overflow_rule": ">600",
+    "bins": [
+      {
+        "index": 0,
+        "label": "0–30帧",
+        "frame_min": 0,
+        "frame_max": 30
+      },
+      {
+        "index": 1,
+        "label": "31–60帧",
+        "frame_min": 31,
+        "frame_max": 60
+      },
+      {
+        "index": 2,
+        "label": "61–90帧",
+        "frame_min": 61,
+        "frame_max": 90
+      },
+      {
+        "index": 3,
+        "label": "91–120帧",
+        "frame_min": 91,
+        "frame_max": 120
+      },
+      {
+        "index": 4,
+        "label": "121–150帧",
+        "frame_min": 121,
+        "frame_max": 150
+      },
+      {
+        "index": 5,
+        "label": "151–180帧",
+        "frame_min": 151,
+        "frame_max": 180
+      },
+      {
+        "index": 6,
+        "label": "181–210帧",
+        "frame_min": 181,
+        "frame_max": 210
+      },
+      {
+        "index": 7,
+        "label": "211–240帧",
+        "frame_min": 211,
+        "frame_max": 240
+      },
+      {
+        "index": 8,
+        "label": "241–270帧",
+        "frame_min": 241,
+        "frame_max": 270
+      },
+      {
+        "index": 9,
+        "label": "271–300帧",
+        "frame_min": 271,
+        "frame_max": 300
+      },
+      {
+        "index": 10,
+        "label": "301–330帧",
+        "frame_min": 301,
+        "frame_max": 330
+      },
+      {
+        "index": 11,
+        "label": "331–360帧",
+        "frame_min": 331,
+        "frame_max": 360
+      },
+      {
+        "index": 12,
+        "label": "361–390帧",
+        "frame_min": 361,
+        "frame_max": 390
+      },
+      {
+        "index": 13,
+        "label": "391–420帧",
+        "frame_min": 391,
+        "frame_max": 420
+      },
+      {
+        "index": 14,
+        "label": "421–450帧",
+        "frame_min": 421,
+        "frame_max": 450
+      },
+      {
+        "index": 15,
+        "label": "451–480帧",
+        "frame_min": 451,
+        "frame_max": 480
+      },
+      {
+        "index": 16,
+        "label": "481–510帧",
+        "frame_min": 481,
+        "frame_max": 510
+      },
+      {
+        "index": 17,
+        "label": "511–540帧",
+        "frame_min": 511,
+        "frame_max": 540
+      },
+      {
+        "index": 18,
+        "label": "541–570帧",
+        "frame_min": 541,
+        "frame_max": 570
+      },
+      {
+        "index": 19,
+        "label": "571–600帧",
+        "frame_min": 571,
+        "frame_max": 600
+      },
+      {
+        "index": 20,
+        "label": ">600帧",
+        "frame_min": 601,
+        "frame_max": null
+      }
+    ],
+    "scopes": {
+      "all": "All ArtRes AnimSequence assets joined by skeletonPath.",
+      "core": "Only joined AnimSequence assets whose path contains /ArtRes/AnimRes/."
+    }
+  },
+  "output_files": {
+    "precise_data.json": "Metadata, logical characters, assembly summaries, assembly LOD rows, frame histograms, module-library summaries, and quality issues.",
+    "logical_characters.csv": "One row per logical character; mutually exclusive assemblies remain listed rather than summed.",
+    "character_summary.csv": "One row per concrete visual assembly.",
+    "character_lods.csv": "Per-assembly, per-LOD triangle and bone fields with coverage/completeness flags.",
+    "character_meshes.csv": "Mesh membership and component assignment.",
+    "character_animations.csv": "Exact skeleton-linked animation clips with actual frame counts and durations.",
+    "character_animation_histogram.csv": "Actual frame-count distribution in 30-frame bins.",
+    "character_textures.csv": "Relation-linked unique textures and exact dimensions.",
+    "character_texture_resolutions.csv": "Per-assembly resolution counts.",
+    "module_library_summary.csv": "NPC module libraries kept separate from complete characters.",
+    "module_library_mesh_lods.csv": "Per-mesh LOD data for NPC module libraries.",
+    "quality_issues.csv": "Unavailable or incomplete source metrics."
+  },
+  "validation": {
+    "ashley_assembly_id": "Hero/Ashley/Default/Combat",
+    "passed": true,
+    "checks": {
+      "mesh_count": {
+        "actual": 12,
+        "expected": 12,
+        "passed": true
+      },
+      "unique_skeleton_count": {
+        "actual": 7,
+        "expected": 7,
+        "passed": true
+      },
+      "reference_bones_unique": {
+        "actual": 1528,
+        "expected": 1528,
+        "passed": true
+      },
+      "skeleton_asset_bones_unique": {
+        "actual": 1565,
+        "expected": 1565,
+        "passed": true
+      },
+      "animation_count_all": {
+        "actual": 860,
+        "expected": 860,
+        "passed": true
+      },
+      "animation_count_core": {
+        "actual": 798,
+        "expected": 798,
+        "passed": true
+      },
+      "texture_count": {
+        "actual": 95,
+        "expected": 95,
+        "passed": true
+      },
+      "frame_histogram_all_count": {
+        "actual": 860,
+        "expected": 860,
+        "passed": true
+      },
+      "frame_histogram_core_count": {
+        "actual": 798,
+        "expected": 798,
+        "passed": true
+      },
+      "lod_triangles": {
+        "actual": [
+          424760,
+          171666,
+          84478,
+          26491,
+          8207
+        ],
+        "expected": [
+          424760,
+          171666,
+          84478,
+          26491,
+          8207
+        ],
+        "passed": true
+      }
+    },
+    "category_counts": {
+      "actual": {
+        "Hero": {
+          "logical_character_count": 15,
+          "assembly_count": 31
+        },
+        "Boss": {
+          "logical_character_count": 15,
+          "assembly_count": 16
+        },
+        "Mob": {
+          "logical_character_count": 30,
+          "assembly_count": 37
+        },
+        "NPC": {
+          "logical_character_count": 273,
+          "assembly_count": 273
+        }
+      },
+      "expected": {
+        "Hero": {
+          "logical_character_count": 15,
+          "assembly_count": 31
+        },
+        "Boss": {
+          "logical_character_count": 15,
+          "assembly_count": 16
+        },
+        "Mob": {
+          "logical_character_count": 30,
+          "assembly_count": 37
+        },
+        "NPC": {
+          "logical_character_count": 273,
+          "assembly_count": 273
+        }
+      },
+      "passed": true
+    }
+  }
+}

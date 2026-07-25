@@ -1,0 +1,70 @@
+{
+  "source_database": "C:\\Users\\YC\\Documents\\Codex\\2026-07-25\\ue\\work\\uex-analysis\\visual\\inventory.db",
+  "inventory_id": 2,
+  "inventory_profile": "silver-palace-visual",
+  "inventory_generated_at": "2026-07-25T11:58:18.3431629+00:00",
+  "inventory_asset_count": 102836,
+  "inventory_relation_count": 1364646,
+  "inventory_error_count": 0,
+  "scope": "ArtRes/EnvRes 主视觉 StaticMesh + SkeletalMesh",
+  "raw_mesh_count": 7572,
+  "excluded_mesh_count": 853,
+  "retained_mesh_count": 6719,
+  "exclusion_counts": {
+    "占位/白盒/破碎测试": 709,
+    "碰撞/代理": 50,
+    "贴花": 10,
+    "技术命名": 3,
+    "交互序列": 40,
+    "天气/触发器": 41
+  },
+  "rules": {
+    "precedence": "先排除技术项，再依次匹配大建筑、植被，其余归其他。",
+    "textures": "仅统计 retained mesh 经 model_material → package_import 实际引用并可精确匹配到 Texture2D/Texture2DArray 的纹理；类内去重，跨类共享可重复。TextureCube 单列数量，不进入分辨率图。",
+    "nanite": "UEX cooked inventory 的 Nanite 数据可能仅为 fallback mesh；这里不声称是运行时可见 Nanite 三角面。"
+  },
+  "validation": {
+    "raw_mesh_count": {
+      "actual": 7572,
+      "expected": 7572,
+      "passed": true
+    },
+    "excluded_mesh_count": {
+      "actual": 853,
+      "expected": 853,
+      "passed": true
+    },
+    "retained_mesh_count": {
+      "actual": 6719,
+      "expected": 6719,
+      "passed": true
+    },
+    "category_mesh_counts": {
+      "actual": {
+        "大建筑": 3798,
+        "植被": 145,
+        "其他": 2776
+      },
+      "expected": {
+        "大建筑": 3798,
+        "植被": 145,
+        "其他": 2776
+      },
+      "passed": true
+    },
+    "category_texture_counts": {
+      "actual": {
+        "大建筑": 3907,
+        "植被": 538,
+        "其他": 5532
+      },
+      "expected": {
+        "大建筑": 3907,
+        "植被": 538,
+        "其他": 5532
+      },
+      "passed": true
+    },
+    "passed": true
+  }
+}

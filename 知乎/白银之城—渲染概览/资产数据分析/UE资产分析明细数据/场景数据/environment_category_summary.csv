@@ -1,0 +1,4 @@
+﻿category,mesh_count,static_mesh_count,skeletal_mesh_count,mesh_with_lod0_count,lod0_triangle_sum,lod0_triangle_median,lod0_triangle_p90,lod0_triangle_max,linked_texture_count,linked_texture_cube_count,mesh_with_linked_texture_count,mesh_texture_coverage,technical_path_texture_count,pcg_baked_fragment_count
+大建筑,3798,3796,2,3798,6711976,606.0,3399,280240,3907,6,3632,0.956292785676672,25,461
+植被,145,145,0,145,316083,1172.0,5766,15657,538,0,136,0.9379310344827586,0,0
+其他,2776,2729,47,2776,5946414,780.0,4101,122024,5532,7,2586,0.9315561959654178,37,0

@@ -1,0 +1,1206 @@
+{
+  "metadata": {
+    "source_database": "C:\\Users\\YC\\Documents\\Codex\\2026-07-25\\ue\\work\\uex-analysis\\visual\\inventory.db",
+    "inventory_id": 2,
+    "inventory_profile": "silver-palace-visual",
+    "inventory_generated_at": "2026-07-25T11:58:18.3431629+00:00",
+    "inventory_asset_count": 102836,
+    "inventory_relation_count": 1364646,
+    "inventory_error_count": 0,
+    "scope": "ArtRes/EnvRes 主视觉 StaticMesh + SkeletalMesh",
+    "raw_mesh_count": 7572,
+    "excluded_mesh_count": 853,
+    "retained_mesh_count": 6719,
+    "exclusion_counts": {
+      "占位/白盒/破碎测试": 709,
+      "碰撞/代理": 50,
+      "贴花": 10,
+      "技术命名": 3,
+      "交互序列": 40,
+      "天气/触发器": 41
+    },
+    "rules": {
+      "precedence": "先排除技术项，再依次匹配大建筑、植被，其余归其他。",
+      "textures": "仅统计 retained mesh 经 model_material → package_import 实际引用并可精确匹配到 Texture2D/Texture2DArray 的纹理；类内去重，跨类共享可重复。TextureCube 单列数量，不进入分辨率图。",
+      "nanite": "UEX cooked inventory 的 Nanite 数据可能仅为 fallback mesh；这里不声称是运行时可见 Nanite 三角面。"
+    },
+    "validation": {
+      "raw_mesh_count": {
+        "actual": 7572,
+        "expected": 7572,
+        "passed": true
+      },
+      "excluded_mesh_count": {
+        "actual": 853,
+        "expected": 853,
+        "passed": true
+      },
+      "retained_mesh_count": {
+        "actual": 6719,
+        "expected": 6719,
+        "passed": true
+      },
+      "category_mesh_counts": {
+        "actual": {
+          "大建筑": 3798,
+          "植被": 145,
+          "其他": 2776
+        },
+        "expected": {
+          "大建筑": 3798,
+          "植被": 145,
+          "其他": 2776
+        },
+        "passed": true
+      },
+      "category_texture_counts": {
+        "actual": {
+          "大建筑": 3907,
+          "植被": 538,
+          "其他": 5532
+        },
+        "expected": {
+          "大建筑": 3907,
+          "植被": 538,
+          "其他": 5532
+        },
+        "passed": true
+      },
+      "passed": true
+    }
+  },
+  "category_summaries": [
+    {
+      "category": "大建筑",
+      "mesh_count": 3798,
+      "static_mesh_count": 3796,
+      "skeletal_mesh_count": 2,
+      "mesh_with_lod0_count": 3798,
+      "lod0_triangle_sum": 6711976,
+      "lod0_triangle_median": 606.0,
+      "lod0_triangle_p90": 3399,
+      "lod0_triangle_max": 280240,
+      "linked_texture_count": 3907,
+      "linked_texture_cube_count": 6,
+      "mesh_with_linked_texture_count": 3632,
+      "mesh_texture_coverage": 0.956292785676672,
+      "technical_path_texture_count": 25,
+      "pcg_baked_fragment_count": 461
+    },
+    {
+      "category": "植被",
+      "mesh_count": 145,
+      "static_mesh_count": 145,
+      "skeletal_mesh_count": 0,
+      "mesh_with_lod0_count": 145,
+      "lod0_triangle_sum": 316083,
+      "lod0_triangle_median": 1172.0,
+      "lod0_triangle_p90": 5766,
+      "lod0_triangle_max": 15657,
+      "linked_texture_count": 538,
+      "linked_texture_cube_count": 0,
+      "mesh_with_linked_texture_count": 136,
+      "mesh_texture_coverage": 0.9379310344827586,
+      "technical_path_texture_count": 0,
+      "pcg_baked_fragment_count": 0
+    },
+    {
+      "category": "其他",
+      "mesh_count": 2776,
+      "static_mesh_count": 2729,
+      "skeletal_mesh_count": 47,
+      "mesh_with_lod0_count": 2776,
+      "lod0_triangle_sum": 5946414,
+      "lod0_triangle_median": 780.0,
+      "lod0_triangle_p90": 4101,
+      "lod0_triangle_max": 122024,
+      "linked_texture_count": 5532,
+      "linked_texture_cube_count": 7,
+      "mesh_with_linked_texture_count": 2586,
+      "mesh_texture_coverage": 0.9315561959654178,
+      "technical_path_texture_count": 37,
+      "pcg_baked_fragment_count": 0
+    }
+  ],
+  "triangle_histogram": [
+    {
+      "category": "大建筑",
+      "bin_index": 0,
+      "triangle_min": 0,
+      "triangle_max_exclusive": 500,
+      "bin_label": "0–499",
+      "mesh_count": 1720
+    },
+    {
+      "category": "大建筑",
+      "bin_index": 1,
+      "triangle_min": 500,
+      "triangle_max_exclusive": 1000,
+      "bin_label": "500–999",
+      "mesh_count": 685
+    },
+    {
+      "category": "大建筑",
+      "bin_index": 2,
+      "triangle_min": 1000,
+      "triangle_max_exclusive": 2000,
+      "bin_label": "1k–1,999",
+      "mesh_count": 676
+    },
+    {
+      "category": "大建筑",
+      "bin_index": 3,
+      "triangle_min": 2000,
+      "triangle_max_exclusive": 5000,
+      "bin_label": "2k–4,999",
+      "mesh_count": 475
+    },
+    {
+      "category": "大建筑",
+      "bin_index": 4,
+      "triangle_min": 5000,
+      "triangle_max_exclusive": 10000,
+      "bin_label": "5k–9,999",
+      "mesh_count": 134
+    },
+    {
+      "category": "大建筑",
+      "bin_index": 5,
+      "triangle_min": 10000,
+      "triangle_max_exclusive": 20000,
+      "bin_label": "10k–19,999",
+      "mesh_count": 69
+    },
+    {
+      "category": "大建筑",
+      "bin_index": 6,
+      "triangle_min": 20000,
+      "triangle_max_exclusive": 50000,
+      "bin_label": "20k–49,999",
+      "mesh_count": 36
+    },
+    {
+      "category": "大建筑",
+      "bin_index": 7,
+      "triangle_min": 50000,
+      "triangle_max_exclusive": 100000,
+      "bin_label": "50k–99,999",
+      "mesh_count": 0
+    },
+    {
+      "category": "大建筑",
+      "bin_index": 8,
+      "triangle_min": 100000,
+      "triangle_max_exclusive": null,
+      "bin_label": "100k+",
+      "mesh_count": 3
+    },
+    {
+      "category": "植被",
+      "bin_index": 0,
+      "triangle_min": 0,
+      "triangle_max_exclusive": 500,
+      "bin_label": "0–499",
+      "mesh_count": 43
+    },
+    {
+      "category": "植被",
+      "bin_index": 1,
+      "triangle_min": 500,
+      "triangle_max_exclusive": 1000,
+      "bin_label": "500–999",
+      "mesh_count": 22
+    },
+    {
+      "category": "植被",
+      "bin_index": 2,
+      "triangle_min": 1000,
+      "triangle_max_exclusive": 2000,
+      "bin_label": "1k–1,999",
+      "mesh_count": 42
+    },
+    {
+      "category": "植被",
+      "bin_index": 3,
+      "triangle_min": 2000,
+      "triangle_max_exclusive": 5000,
+      "bin_label": "2k–4,999",
+      "mesh_count": 18
+    },
+    {
+      "category": "植被",
+      "bin_index": 4,
+      "triangle_min": 5000,
+      "triangle_max_exclusive": 10000,
+      "bin_label": "5k–9,999",
+      "mesh_count": 16
+    },
+    {
+      "category": "植被",
+      "bin_index": 5,
+      "triangle_min": 10000,
+      "triangle_max_exclusive": 20000,
+      "bin_label": "10k–19,999",
+      "mesh_count": 4
+    },
+    {
+      "category": "植被",
+      "bin_index": 6,
+      "triangle_min": 20000,
+      "triangle_max_exclusive": 50000,
+      "bin_label": "20k–49,999",
+      "mesh_count": 0
+    },
+    {
+      "category": "植被",
+      "bin_index": 7,
+      "triangle_min": 50000,
+      "triangle_max_exclusive": 100000,
+      "bin_label": "50k–99,999",
+      "mesh_count": 0
+    },
+    {
+      "category": "植被",
+      "bin_index": 8,
+      "triangle_min": 100000,
+      "triangle_max_exclusive": null,
+      "bin_label": "100k+",
+      "mesh_count": 0
+    },
+    {
+      "category": "其他",
+      "bin_index": 0,
+      "triangle_min": 0,
+      "triangle_max_exclusive": 500,
+      "bin_label": "0–499",
+      "mesh_count": 1109
+    },
+    {
+      "category": "其他",
+      "bin_index": 1,
+      "triangle_min": 500,
+      "triangle_max_exclusive": 1000,
+      "bin_label": "500–999",
+      "mesh_count": 470
+    },
+    {
+      "category": "其他",
+      "bin_index": 2,
+      "triangle_min": 1000,
+      "triangle_max_exclusive": 2000,
+      "bin_label": "1k–1,999",
+      "mesh_count": 512
+    },
+    {
+      "category": "其他",
+      "bin_index": 3,
+      "triangle_min": 2000,
+      "triangle_max_exclusive": 5000,
+      "bin_label": "2k–4,999",
+      "mesh_count": 475
+    },
+    {
+      "category": "其他",
+      "bin_index": 4,
+      "triangle_min": 5000,
+      "triangle_max_exclusive": 10000,
+      "bin_label": "5k–9,999",
+      "mesh_count": 119
+    },
+    {
+      "category": "其他",
+      "bin_index": 5,
+      "triangle_min": 10000,
+      "triangle_max_exclusive": 20000,
+      "bin_label": "10k–19,999",
+      "mesh_count": 56
+    },
+    {
+      "category": "其他",
+      "bin_index": 6,
+      "triangle_min": 20000,
+      "triangle_max_exclusive": 50000,
+      "bin_label": "20k–49,999",
+      "mesh_count": 28
+    },
+    {
+      "category": "其他",
+      "bin_index": 7,
+      "triangle_min": 50000,
+      "triangle_max_exclusive": 100000,
+      "bin_label": "50k–99,999",
+      "mesh_count": 3
+    },
+    {
+      "category": "其他",
+      "bin_index": 8,
+      "triangle_min": 100000,
+      "triangle_max_exclusive": null,
+      "bin_label": "100k+",
+      "mesh_count": 4
+    }
+  ],
+  "texture_resolutions": [
+    {
+      "category": "大建筑",
+      "width": 2048,
+      "height": 2048,
+      "resolution": "2048×2048",
+      "texture_count": 52
+    },
+    {
+      "category": "大建筑",
+      "width": 2048,
+      "height": 1024,
+      "resolution": "2048×1024",
+      "texture_count": 4
+    },
+    {
+      "category": "大建筑",
+      "width": 1024,
+      "height": 2048,
+      "resolution": "1024×2048",
+      "texture_count": 2
+    },
+    {
+      "category": "大建筑",
+      "width": 1024,
+      "height": 1024,
+      "resolution": "1024×1024",
+      "texture_count": 2032
+    },
+    {
+      "category": "大建筑",
+      "width": 1024,
+      "height": 512,
+      "resolution": "1024×512",
+      "texture_count": 8
+    },
+    {
+      "category": "大建筑",
+      "width": 512,
+      "height": 1024,
+      "resolution": "512×1024",
+      "texture_count": 1
+    },
+    {
+      "category": "大建筑",
+      "width": 512,
+      "height": 512,
+      "resolution": "512×512",
+      "texture_count": 1324
+    },
+    {
+      "category": "大建筑",
+      "width": 512,
+      "height": 256,
+      "resolution": "512×256",
+      "texture_count": 6
+    },
+    {
+      "category": "大建筑",
+      "width": 256,
+      "height": 512,
+      "resolution": "256×512",
+      "texture_count": 1
+    },
+    {
+      "category": "大建筑",
+      "width": 256,
+      "height": 256,
+      "resolution": "256×256",
+      "texture_count": 419
+    },
+    {
+      "category": "大建筑",
+      "width": 128,
+      "height": 128,
+      "resolution": "128×128",
+      "texture_count": 44
+    },
+    {
+      "category": "大建筑",
+      "width": 64,
+      "height": 64,
+      "resolution": "64×64",
+      "texture_count": 6
+    },
+    {
+      "category": "大建筑",
+      "width": 32,
+      "height": 32,
+      "resolution": "32×32",
+      "texture_count": 2
+    },
+    {
+      "category": "大建筑",
+      "width": 7,
+      "height": 3,
+      "resolution": "7×3",
+      "texture_count": 1
+    },
+    {
+      "category": "大建筑",
+      "width": 5,
+      "height": 3,
+      "resolution": "5×3",
+      "texture_count": 1
+    },
+    {
+      "category": "大建筑",
+      "width": 6,
+      "height": 2,
+      "resolution": "6×2",
+      "texture_count": 1
+    },
+    {
+      "category": "大建筑",
+      "width": 2,
+      "height": 2,
+      "resolution": "2×2",
+      "texture_count": 2
+    },
+    {
+      "category": "大建筑",
+      "width": 1,
+      "height": 1,
+      "resolution": "1×1",
+      "texture_count": 1
+    },
+    {
+      "category": "植被",
+      "width": 1024,
+      "height": 1024,
+      "resolution": "1024×1024",
+      "texture_count": 55
+    },
+    {
+      "category": "植被",
+      "width": 512,
+      "height": 1024,
+      "resolution": "512×1024",
+      "texture_count": 5
+    },
+    {
+      "category": "植被",
+      "width": 512,
+      "height": 512,
+      "resolution": "512×512",
+      "texture_count": 124
+    },
+    {
+      "category": "植被",
+      "width": 256,
+      "height": 512,
+      "resolution": "256×512",
+      "texture_count": 1
+    },
+    {
+      "category": "植被",
+      "width": 256,
+      "height": 256,
+      "resolution": "256×256",
+      "texture_count": 79
+    },
+    {
+      "category": "植被",
+      "width": 128,
+      "height": 128,
+      "resolution": "128×128",
+      "texture_count": 60
+    },
+    {
+      "category": "植被",
+      "width": 64,
+      "height": 64,
+      "resolution": "64×64",
+      "texture_count": 17
+    },
+    {
+      "category": "植被",
+      "width": 32,
+      "height": 32,
+      "resolution": "32×32",
+      "texture_count": 1
+    },
+    {
+      "category": "植被",
+      "width": 23,
+      "height": 21,
+      "resolution": "23×21",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 61,
+      "height": 7,
+      "resolution": "61×7",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 189,
+      "height": 2,
+      "resolution": "189×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 172,
+      "height": 2,
+      "resolution": "172×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 61,
+      "height": 5,
+      "resolution": "61×5",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 151,
+      "height": 2,
+      "resolution": "151×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 139,
+      "height": 2,
+      "resolution": "139×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 134,
+      "height": 2,
+      "resolution": "134×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 131,
+      "height": 2,
+      "resolution": "131×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 16,
+      "height": 16,
+      "resolution": "16×16",
+      "texture_count": 3
+    },
+    {
+      "category": "植被",
+      "width": 124,
+      "height": 2,
+      "resolution": "124×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 19,
+      "height": 13,
+      "resolution": "19×13",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 77,
+      "height": 3,
+      "resolution": "77×3",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 43,
+      "height": 5,
+      "resolution": "43×5",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 71,
+      "height": 3,
+      "resolution": "71×3",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 15,
+      "height": 14,
+      "resolution": "15×14",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 104,
+      "height": 2,
+      "resolution": "104×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 102,
+      "height": 2,
+      "resolution": "102×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 29,
+      "height": 7,
+      "resolution": "29×7",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 67,
+      "height": 3,
+      "resolution": "67×3",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 100,
+      "height": 2,
+      "resolution": "100×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 37,
+      "height": 5,
+      "resolution": "37×5",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 92,
+      "height": 2,
+      "resolution": "92×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 86,
+      "height": 2,
+      "resolution": "86×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 82,
+      "height": 2,
+      "resolution": "82×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 80,
+      "height": 2,
+      "resolution": "80×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 74,
+      "height": 2,
+      "resolution": "74×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 17,
+      "height": 7,
+      "resolution": "17×7",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 39,
+      "height": 3,
+      "resolution": "39×3",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 56,
+      "height": 2,
+      "resolution": "56×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 11,
+      "height": 10,
+      "resolution": "11×10",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 11,
+      "height": 9,
+      "resolution": "11×9",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 19,
+      "height": 5,
+      "resolution": "19×5",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 31,
+      "height": 3,
+      "resolution": "31×3",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 46,
+      "height": 2,
+      "resolution": "46×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 10,
+      "height": 9,
+      "resolution": "10×9",
+      "texture_count": 4
+    },
+    {
+      "category": "植被",
+      "width": 44,
+      "height": 2,
+      "resolution": "44×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 17,
+      "height": 5,
+      "resolution": "17×5",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 10,
+      "height": 8,
+      "resolution": "10×8",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 39,
+      "height": 2,
+      "resolution": "39×2",
+      "texture_count": 4
+    },
+    {
+      "category": "植被",
+      "width": 38,
+      "height": 2,
+      "resolution": "38×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 23,
+      "height": 3,
+      "resolution": "23×3",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 13,
+      "height": 5,
+      "resolution": "13×5",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 8,
+      "height": 8,
+      "resolution": "8×8",
+      "texture_count": 11
+    },
+    {
+      "category": "植被",
+      "width": 9,
+      "height": 7,
+      "resolution": "9×7",
+      "texture_count": 4
+    },
+    {
+      "category": "植被",
+      "width": 30,
+      "height": 2,
+      "resolution": "30×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 27,
+      "height": 2,
+      "resolution": "27×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 24,
+      "height": 2,
+      "resolution": "24×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 8,
+      "height": 6,
+      "resolution": "8×6",
+      "texture_count": 6
+    },
+    {
+      "category": "植被",
+      "width": 23,
+      "height": 2,
+      "resolution": "23×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 22,
+      "height": 2,
+      "resolution": "22×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 21,
+      "height": 2,
+      "resolution": "21×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 7,
+      "height": 6,
+      "resolution": "7×6",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 20,
+      "height": 2,
+      "resolution": "20×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 19,
+      "height": 2,
+      "resolution": "19×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 7,
+      "height": 5,
+      "resolution": "7×5",
+      "texture_count": 8
+    },
+    {
+      "category": "植被",
+      "width": 11,
+      "height": 3,
+      "resolution": "11×3",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 9,
+      "height": 3,
+      "resolution": "9×3",
+      "texture_count": 4
+    },
+    {
+      "category": "植被",
+      "width": 13,
+      "height": 2,
+      "resolution": "13×2",
+      "texture_count": 4
+    },
+    {
+      "category": "植被",
+      "width": 5,
+      "height": 5,
+      "resolution": "5×5",
+      "texture_count": 4
+    },
+    {
+      "category": "植被",
+      "width": 12,
+      "height": 2,
+      "resolution": "12×2",
+      "texture_count": 4
+    },
+    {
+      "category": "植被",
+      "width": 11,
+      "height": 2,
+      "resolution": "11×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 7,
+      "height": 3,
+      "resolution": "7×3",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 10,
+      "height": 2,
+      "resolution": "10×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 5,
+      "height": 4,
+      "resolution": "5×4",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 9,
+      "height": 2,
+      "resolution": "9×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 8,
+      "height": 2,
+      "resolution": "8×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 5,
+      "height": 3,
+      "resolution": "5×3",
+      "texture_count": 4
+    },
+    {
+      "category": "植被",
+      "width": 7,
+      "height": 2,
+      "resolution": "7×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 5,
+      "height": 2,
+      "resolution": "5×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 8,
+      "height": 1,
+      "resolution": "8×1",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 4,
+      "height": 2,
+      "resolution": "4×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 2,
+      "height": 2,
+      "resolution": "2×2",
+      "texture_count": 2
+    },
+    {
+      "category": "植被",
+      "width": 2,
+      "height": 1,
+      "resolution": "2×1",
+      "texture_count": 10
+    },
+    {
+      "category": "植被",
+      "width": 1,
+      "height": 1,
+      "resolution": "1×1",
+      "texture_count": 4
+    },
+    {
+      "category": "其他",
+      "width": 2048,
+      "height": 2048,
+      "resolution": "2048×2048",
+      "texture_count": 74
+    },
+    {
+      "category": "其他",
+      "width": 2048,
+      "height": 1024,
+      "resolution": "2048×1024",
+      "texture_count": 5
+    },
+    {
+      "category": "其他",
+      "width": 2048,
+      "height": 512,
+      "resolution": "2048×512",
+      "texture_count": 1
+    },
+    {
+      "category": "其他",
+      "width": 1024,
+      "height": 1024,
+      "resolution": "1024×1024",
+      "texture_count": 2096
+    },
+    {
+      "category": "其他",
+      "width": 1024,
+      "height": 512,
+      "resolution": "1024×512",
+      "texture_count": 82
+    },
+    {
+      "category": "其他",
+      "width": 512,
+      "height": 1024,
+      "resolution": "512×1024",
+      "texture_count": 11
+    },
+    {
+      "category": "其他",
+      "width": 1024,
+      "height": 256,
+      "resolution": "1024×256",
+      "texture_count": 11
+    },
+    {
+      "category": "其他",
+      "width": 512,
+      "height": 512,
+      "resolution": "512×512",
+      "texture_count": 1472
+    },
+    {
+      "category": "其他",
+      "width": 256,
+      "height": 1024,
+      "resolution": "256×1024",
+      "texture_count": 1
+    },
+    {
+      "category": "其他",
+      "width": 1024,
+      "height": 128,
+      "resolution": "1024×128",
+      "texture_count": 7
+    },
+    {
+      "category": "其他",
+      "width": 512,
+      "height": 256,
+      "resolution": "512×256",
+      "texture_count": 49
+    },
+    {
+      "category": "其他",
+      "width": 256,
+      "height": 512,
+      "resolution": "256×512",
+      "texture_count": 4
+    },
+    {
+      "category": "其他",
+      "width": 512,
+      "height": 128,
+      "resolution": "512×128",
+      "texture_count": 1
+    },
+    {
+      "category": "其他",
+      "width": 256,
+      "height": 256,
+      "resolution": "256×256",
+      "texture_count": 1320
+    },
+    {
+      "category": "其他",
+      "width": 512,
+      "height": 64,
+      "resolution": "512×64",
+      "texture_count": 1
+    },
+    {
+      "category": "其他",
+      "width": 256,
+      "height": 128,
+      "resolution": "256×128",
+      "texture_count": 17
+    },
+    {
+      "category": "其他",
+      "width": 128,
+      "height": 256,
+      "resolution": "128×256",
+      "texture_count": 1
+    },
+    {
+      "category": "其他",
+      "width": 128,
+      "height": 128,
+      "resolution": "128×128",
+      "texture_count": 281
+    },
+    {
+      "category": "其他",
+      "width": 128,
+      "height": 64,
+      "resolution": "128×64",
+      "texture_count": 13
+    },
+    {
+      "category": "其他",
+      "width": 64,
+      "height": 64,
+      "resolution": "64×64",
+      "texture_count": 77
+    },
+    {
+      "category": "其他",
+      "width": 32,
+      "height": 32,
+      "resolution": "32×32",
+      "texture_count": 6
+    },
+    {
+      "category": "其他",
+      "width": 2,
+      "height": 2,
+      "resolution": "2×2",
+      "texture_count": 2
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+﻿issue_type,asset_path,lod_index,reason
+missing_lod_triangles,SilverPalace/Content/ArtRes/CharRes/Mob/CandleMob/Candleman/Role/Meshes/SK_Candleman_01.SK_Candleman_01,0,The cooked skeletal LOD does not contain an index buffer.
+missing_lod_triangles,SilverPalace/Content/ArtRes/CharRes/Mob/CandleMob/Candleman/Role/Meshes/SK_Candleman_01.SK_Candleman_01,1,The cooked skeletal LOD does not contain an index buffer.
